@@ -1,0 +1,26 @@
+version: 0.2
+
+env:
+  variables:
+    ASSUME_ACCOUNT: "837180165073"
+    ASSUME_ROLE_ARN: "arn:aws:iam::837180165073:role/SharedAccAccessRole"
+  #parameter-store:
+   # AWS_ACCESS_KEY_ID: ""
+
+phases:
+  install:
+    commands:
+      - echo Setting up virtualenv
+      - python -m venv venv
+      - source venv/bin/activate
+      - echo Installing requirements from file
+      - pip install -r requirements.txt
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building and running tests
+      - python tests.py
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Deployment completed
