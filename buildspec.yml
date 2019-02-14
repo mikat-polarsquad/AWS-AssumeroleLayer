@@ -13,7 +13,7 @@ phases:
       - echo Setting up virtualenv
       - python -m venv venv
       - pwd
-      - ls -la
+      - ls -la ./venv/bin/
       - source venv/bin/activate
       - echo Installing requirements from file
       - pip install -r requirements.txt
