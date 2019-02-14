@@ -14,7 +14,7 @@ phases:
       - python -m venv venv
       - pwd
       - ls -la ./venv/bin/
-      - source venv/bin/activate
+      - . venv/bin/activate
       - echo Installing requirements from file
       - pip install -r requirements.txt
   build:
