@@ -12,8 +12,6 @@ phases:
     commands:
       - echo Setting up virtualenv
       - python -m venv venv
-      - pwd
-      - ls -la ./venv/bin/
       - . venv/bin/activate
       - echo Installing requirements from file
       - pip install -r requirements.txt
@@ -22,7 +20,7 @@ phases:
       - echo Build started on `date`
       - echo Building and running tests
       - python tests.py
-      - zip -r assumeRoleLayer.zip * --exclude *venv*
+      - zip -r assumeRoleLayer.zip * --exclude *venv/**\*
   post_build:
     commands:
       - echo Build completed on `date`
