@@ -22,7 +22,15 @@ phases:
       - echo Build started on `date`
       - echo Building and running tests
       - python tests.py
+      - zip -r assumeRoleLayer.zip *
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Deployment completed
+
+artifacts:
+  secondary-artifacts:
+    artifact1:
+      base-directory: $CODEBUILD_SRC_DIR_source1
+      files:
+        - assumeRoleLayer.zip
