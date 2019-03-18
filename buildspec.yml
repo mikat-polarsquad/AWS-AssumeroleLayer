@@ -29,7 +29,7 @@ phases:
       - echo Deployment completed
 
 artifacts:
-  secondary-artifacts:
+  primary-artifacts:
     artifact1:
       base-directory: $CODEBUILD_SRC_DIR_source1
       files:
