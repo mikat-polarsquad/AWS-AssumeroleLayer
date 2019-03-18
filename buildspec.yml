@@ -22,7 +22,7 @@ phases:
       - echo Build started on `date`
       - echo Building and running tests
       - python tests.py
-      - zip -r assumeRoleLayer.zip * -x ./venv/
+      - zip -r assumeRoleLayer.zip * --exclude *venv*
   post_build:
     commands:
       - echo Build completed on `date`
