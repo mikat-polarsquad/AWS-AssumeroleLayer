@@ -26,7 +26,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo '***** Uploading to S3 *****'
-      - aws s3 sync assumeRoleLayer.zip s3://cops-codebuild-packages
+      - aws s3 cp assumeRoleLayer.zip s3://cops-codebuild-packages
       - echo Deployment completed
 
 artifacts:
