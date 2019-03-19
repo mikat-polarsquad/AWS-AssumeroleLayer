@@ -34,9 +34,12 @@ phases:
       - echo Deployment completed
 
 artifacts:
-  primary-artifacts:
-    artifact1:
-      base-directory: /tmp/
-      discard-paths: yes
-      files:
-        - '*'
+  files:
+    - /tmp/*.zip
+# artifacts:
+#   primary-artifacts:
+#     artifact1:
+#       base-directory: /tmp/
+#       discard-paths: yes
+#       files:
+#         - '*'
