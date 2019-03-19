@@ -18,10 +18,12 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - echo 'Working dir'
+      - pwd
       - echo Building and running tests
       - python tests.py
       - zip -r /tmp/assumeRoleLayer.zip * --exclude venv/**\*
-      - ls -l *.zip
+      - ls -l /tmp/*.zip
   post_build:
     commands:
       - echo Build completed on `date`
