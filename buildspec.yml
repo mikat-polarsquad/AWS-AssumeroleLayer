@@ -25,10 +25,13 @@ phases:
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo '***** Uploading to S3 *****'
+      - aws s3 sync assumeRoleLayer.zip s3://cops-codebuild-packages
       - echo Deployment completed
 
 artifacts:
   primary-artifacts:
     artifact1:
+      base-directory: $CODEBUILD_SRC_DIR
       files:
         - assumeRoleLayer.zip
