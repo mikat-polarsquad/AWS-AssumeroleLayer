@@ -18,19 +18,12 @@ phases:
   build:
     commands:
       - echo Build started on `date`
-      - echo 'Working dir'
-      - pwd
       - echo Building and running tests
       - python tests.py
       - zip -r /tmp/assumeRoleLayer.zip * --exclude venv/**\*
-      - ls -l /tmp/*.zip
   post_build:
     commands:
       - echo Build completed on `date`
-      # - echo '***** SOURCE DIR *****'
-      # - echo $CODEBUILD_SRC_DIR
-      # - echo '***** Uploading to S3 *****'
-      # - aws s3 cp assumeRoleLayer.zip s3://cops-codebuild-packages/assumeRole.zip
       - echo Deployment completed
 
 artifacts:
@@ -38,10 +31,3 @@ artifacts:
   files:
     - '*.zip'
   discard-paths: yes
-# artifacts:
-#   primary-artifacts:
-#     artifact1:
-#       base-directory: /tmp/
-#       discard-paths: yes
-#       files:
-#         - '*'
