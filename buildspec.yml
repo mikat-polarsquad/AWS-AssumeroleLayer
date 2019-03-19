@@ -21,6 +21,7 @@ phases:
       - echo Building and running tests
       - python tests.py
       - zip -r assumeRoleLayer.zip * --exclude venv/**\*
+      - ls -l *.zip
   post_build:
     commands:
       - echo Build completed on `date`
